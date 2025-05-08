@@ -1,0 +1,36 @@
+{
+    "common": {
+        "username": {
+            "label": "Username",
+            "error": "Please enter a valid username"
+        },
+        "password": {
+            "label": "Password",
+            "error": "Please enter a valid password"
+        }
+    },
+    "chats": {
+        "title": "Chats"
+    },
+    "test": {
+        "title": "Test"
+    },
+    "auth": {
+        "login": "Login",
+        "log-in": "Log In",
+        "register": "Register",
+        "username": "Username",
+        "password": "Password",
+        "logout": "Logout",
+        "forgot_password": "Forgot Password?",
+        "remember_me": "Remember Me"
+    },
+    "404": {
+        "title": "404 Not Found"
+    },
+    "routes": {
+        "home": {
+            "title": "Home"
+        }
+    }
+}
