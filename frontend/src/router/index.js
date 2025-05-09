@@ -9,10 +9,47 @@ const routes = [
     component: Home,
     meta: {
       icon: 'mdi-home',
-      title: 'routes.home.title',
+      title: 'home.title',
       requiresAuth: false,
     }
   },
+  {
+    path: '/test',
+    name: 'test',
+    component: Home,
+    children: [
+      {
+        path: 'test1',
+        name: 'test1',
+        component: Home,
+        meta: {
+          title: 'test.title'
+        }
+      },
+      {
+        path: 'test2',
+        name: 'test2',
+        component: Home,
+        meta: {
+          title: 'test.title'
+        }
+      },
+    ],
+    meta: {
+      icon: 'mdi-test-tube',
+      title: 'test.title',
+      requiresAuth: false,
+    }
+  },
+  {
+    path: '/404',
+    name: 'not-found',
+    component: Home,
+    meta: {
+      show: false,
+      title: '404.title'
+    }
+  }
 ];
 
 const router = createRouter({
@@ -21,6 +58,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  console.log(to)
   if (to.matched.length === 0) {
     document.title = '404 - Page Not Found';
     next('/404');
