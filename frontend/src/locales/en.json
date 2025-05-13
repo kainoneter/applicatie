@@ -12,8 +12,17 @@
     "home": {
         "title": "Home"
     },
-    "test": {
-        "title": "Test"
+    "categories": {
+        "title": "Categories"
+    },
+    "cart": {
+        "title": "Cart"
+    },
+    "test1":{
+        "title": "Test 1"
+    },
+    "test2":{
+        "title": "Test 2"
     },
     "404": {
         "title": "404 Not Found"

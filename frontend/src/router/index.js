@@ -10,20 +10,18 @@ const routes = [
     meta: {
       icon: 'mdi-home',
       title: 'home.title',
-      requiresAuth: false,
     }
   },
   {
-    path: '/test',
-    name: 'test',
-    component: Home,
+    path: '/categories',
+    name: 'categories',
     children: [
       {
         path: 'test1',
         name: 'test1',
         component: Home,
         meta: {
-          title: 'test.title'
+          title: 'test1.title'
         }
       },
       {
@@ -31,19 +29,27 @@ const routes = [
         name: 'test2',
         component: Home,
         meta: {
-          title: 'test.title'
+          title: 'test2.title'
         }
       },
     ],
     meta: {
-      icon: 'mdi-test-tube',
-      title: 'test.title',
-      requiresAuth: false,
+      icon: 'mdi-view-grid',
+      title: 'categories.title',
+    }
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: Home,
+    meta: {
+      title: 'cart.title',
+      icon: 'mdi-cart'
+
     }
   },
   {
     path: '/404',
-    name: 'not-found',
     component: Home,
     meta: {
       show: false,
@@ -58,7 +64,6 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  console.log(to)
   if (to.matched.length === 0) {
     document.title = '404 - Page Not Found';
     next('/404');

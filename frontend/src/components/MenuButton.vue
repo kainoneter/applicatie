@@ -1,5 +1,5 @@
 <template>
-    <v-btn  @click="path ? $router.push(path) : ''" v-bind="$attrs"><v-icon v-if="icon">{{ icon }}</v-icon>{{ $t(title) }}</v-btn>
+    <v-btn class="menu-btn" @click="path ? $router.push(path) : ''" v-bind="$attrs"><v-icon v-if="icon">{{ icon }}</v-icon>{{ $t(title) }}</v-btn>
 </template>
 <script>
 export default {
@@ -14,7 +14,7 @@ export default {
 }
 </script>
 <style scoped>
-    .v-icon{
-        margin-right: 5px;
+    .v-btn{
+        min-width: 110px;
     }
 </style>
