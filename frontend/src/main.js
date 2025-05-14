@@ -11,6 +11,7 @@ import * as directives from 'vuetify/directives'
 import '@mdi/font/css/materialdesignicons.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
+import './assets/main.css';
 
 const vuetify = createVuetify({
   components,
@@ -20,13 +21,17 @@ const vuetify = createVuetify({
     themes: {
         dark: {
             colors: {
-                secondary: '#212e3b',
+                primary: '#4B0082',
+                background: '#434343',
+                surface: '#2c2c2c',
+                switch: '#ccc',
             },
         },
         light: {
             colors: {
-                surface: '#ccc',
-                secondary: '#b7c4d1',
+                primary: '#4B0082',
+                surface: '#DCDCDC',
+                switch: '#ffff',
             },
         }
     }

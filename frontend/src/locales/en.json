@@ -9,28 +9,23 @@
             "error": "Please enter a valid password"
         }
     },
-    "chats": {
-        "title": "Chats"
+    "home": {
+        "title": "Home"
     },
-    "test": {
-        "title": "Test"
+    "categories": {
+        "title": "Categories"
     },
-    "auth": {
-        "login": "Login",
-        "log-in": "Log In",
-        "register": "Register",
-        "username": "Username",
-        "password": "Password",
-        "logout": "Logout",
-        "forgot_password": "Forgot Password?",
-        "remember_me": "Remember Me"
+    "cart": {
+        "title": "Cart"
+    },
+    "test1":{
+        "title": "Test 1"
+    },
+    "test2":{
+        "title": "Test 2"
     },
     "404": {
-        "title": "404 Not Found"
-    },
-    "routes": {
-        "home": {
-            "title": "Home"
-        }
+        "title": "404 Not Found",
+        "description": "The page you are looking for does not exist."
     }
 }

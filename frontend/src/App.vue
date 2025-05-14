@@ -1,12 +1,12 @@
 <template>
     <v-app>
-        <v-app-bar  app>
-            <v-container class="container">
-                
-            </v-container>
-        </v-app-bar>
+        <div :class="this.desktop ? 'container' : ''">
+            <component
+            :is="this.desktop ? 'MenuDesktop' : 'MenuMobile'"
+            />
+        </div>
         <v-main>
-            <router-view v-slot="{ Component, route}">
+            <router-view v-slot="{ Component, route}">  
                 <transition name="fade" mode="out-in">
                     <component :is="Component" :key="route.path" />
                 </transition>
@@ -16,53 +16,44 @@
 </template>
 
 <script>
-    export default {
-    data() {
-        return {
-            drawer: true,
+import MenuDesktop from './components/MenuDesktop.vue';
+import MenuMobile from './components/MenuMobile.vue';
+export default {
+    components: {
+        MenuDesktop,
+        MenuMobile
+    },
+    data(){
+        return{
+            desktop: window.innerWidth > 768,
         }
     },
-    computed: {
-        routes(){
-            return this.$router.options.routes.filter( route => {
-                return route.meta?.show !== false
-            });
-        }
+    mounted(){
+        window.addEventListener('resize', this.handleResize)
     },
     methods: {
-        toggleDrawer() {
-            this.drawer = !this.drawer;
+        handleResize(){
+            return this.desktop = window.innerWidth > 768
         }
-    },
+    }
 }
 </script>
 
-<style>
+<style scoped>
     .fade-enter-active,
     .fade-leave-active {
-        transition: opacity 0.5s ease;
+        transition: transform 0.2s ease, opacity 0.05s ease;
     }
-    .fade-enter-from,
-    .fade-leave-to {
-        opacity: 0;
-    }
-    .v-toolbar__content{
-        display: flex;
-        justify-content: center;
-    }
-    #nav-btn{
-        position: absolute;
-        right: -80px;
-        top: 20px;
-    }
-
-    .nav-item{
+    .fade-enter-from{
         
     }
-     
-    @media(min-width: 1279px){
-        #nav-btn{
-            display: none;
-        }
+
+    .fade-leave-to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    main{
+        padding-top: 60px;
     }
 </style>    

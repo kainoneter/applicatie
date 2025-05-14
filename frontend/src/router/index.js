@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
+import NotFound from '@/views/NotFound.vue';
 import i18n from '@/i18n';
 
 const routes = [
@@ -9,10 +10,53 @@ const routes = [
     component: Home,
     meta: {
       icon: 'mdi-home',
-      title: 'routes.home.title',
-      requiresAuth: false,
+      title: 'home.title',
     }
   },
+  {
+    path: '/categories',
+    name: 'categories',
+    children: [
+      {
+        path: 'test1',
+        name: 'test1',
+        component: Home,
+        meta: {
+          title: 'test1.title'
+        }
+      },
+      {
+        path: 'test2',
+        name: 'test2',
+        component: Home,
+        meta: {
+          title: 'test2.title'
+        }
+      },
+    ],
+    meta: {
+      icon: 'mdi-view-grid',
+      title: 'categories.title',
+    }
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: Home,
+    meta: {
+      title: 'cart.title',
+      icon: 'mdi-cart'
+
+    }
+  },
+  {
+    path: '/404',
+    component: NotFound,
+    meta: {
+      show: false,
+      title: '404.title'
+    }
+  }
 ];
 
 const router = createRouter({
