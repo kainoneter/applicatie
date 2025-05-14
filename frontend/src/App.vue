@@ -54,8 +54,6 @@ export default {
     }
 
     main{
-        height: 200vh;
-        background-color: blue;
         padding-top: 60px;
     }
 </style>    

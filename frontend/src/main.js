@@ -13,8 +13,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 import './assets/main.css';
 
-
-// General colors are defined in main.css 
 const vuetify = createVuetify({
   components,
   directives,

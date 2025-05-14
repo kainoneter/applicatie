@@ -25,6 +25,7 @@
         "title": "Test 2"
     },
     "404": {
-        "title": "404 Not Found"
+        "title": "404 Not Found",
+        "description": "The page you are looking for does not exist."
     }
 }

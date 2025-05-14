@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
+import NotFound from '@/views/NotFound.vue';
 import i18n from '@/i18n';
 
 const routes = [
@@ -50,7 +51,7 @@ const routes = [
   },
   {
     path: '/404',
-    component: Home,
+    component: NotFound,
     meta: {
       show: false,
       title: '404.title'

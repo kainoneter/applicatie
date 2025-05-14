@@ -1,6 +1,10 @@
 <template>
     <div id="container">
-        <div class="menu-toggle" @click.stop="toggle"></div>
+        <div class="menu-toggle" @click.stop="toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
         <nav class="bg-primary">
             <component
             v-for="(route, index) in routes"
@@ -44,15 +48,23 @@ export default {
                 this.deactivate()
             }
         });
+        this.nav = document.querySelector('nav');
+        this.bars = document.querySelectorAll('.bar');
     },
     methods: {
         activate(){
             this.menu = true;
-            return document.querySelector('nav').classList.add('active');
+            this.bars.forEach((bar) => {
+                bar.classList.add('active')
+            })
+            return this.nav.classList.add('active');
         },
         deactivate(){
             this.menu = false;
-            return document.querySelector('nav').classList.remove('active');
+            this.bars.forEach((bar) => {
+                bar.classList.remove('active')
+            })
+            return this.nav.classList.remove('active');
         },
         toggle(){
             return this.menu ? this.deactivate() : this.activate();
@@ -62,13 +74,40 @@ export default {
 </script>
 <style scoped>
     .menu-toggle{
-        width: 50px;
-        aspect-ratio: 1;
-        background-color: black;
-        margin: 10px;
+        width: 40px;
+        aspect-ratio: 1.1;
+        right: 0;
+        margin: 20px;
         position: absolute;
         z-index: 1000;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
     }
+
+    .bar{
+        background-color: black;
+        height: 7px;
+        border-radius: 5px;
+        width: 100%;
+        transition: transform 0.2s ease-out, opacity 0.1s ease;
+    }
+
+    .bar:nth-child(1).active{
+        transform: translateY(200%) rotate(45deg);
+        
+    }
+    .bar:nth-child(2).active{
+        opacity: 0;
+        
+    }
+    .bar:nth-child(3).active{
+        transform: translateY(-200%) rotate(-45deg);
+    }
+
+
 
     #container{
         position: fixed;
@@ -84,8 +123,9 @@ export default {
         gap: 10px;
         padding: 70px 20vw 0 20vw;
         background-color: green;
-        transform: translateY(-100%);
-        transition: transform 0.1s ease-in;
+        transform: translateY(-150%);
+        transition: transform 0.2s ease-in-out;
+        box-shadow: var(--shadow-menu);
     }
 
     nav.active{
