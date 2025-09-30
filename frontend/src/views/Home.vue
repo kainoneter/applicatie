@@ -1,13 +1,13 @@
 <template>
-    <v-container fluid>
-        
-    </v-container>
+    <div>
+
+    </div>
 </template>
-<script>
-export default {
-    name: 'Home',
-}
+
+<script setup>
+
 </script>
-<style>
-    
+
+<style scoped>
+
 </style>
