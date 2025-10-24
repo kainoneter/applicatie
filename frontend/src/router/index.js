@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/views/admin/Home.vue'
+import AdminHome from '@/views/admin/AdminHome.vue'
 import NotFound from '@/views/shared/NotFound.vue';
 import i18n from '@/i18n';
 import AdminLayout from '@/views/layouts/AdminLayout.vue';
@@ -35,7 +35,7 @@ const routes = [
       {
         path: 'home',
         name: 'home',
-        component: Home,
+        component: AdminHome,
         meta: {
           icon: 'mdi-home',
         }
