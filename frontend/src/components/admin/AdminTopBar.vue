@@ -8,13 +8,15 @@
         <MobileMenu :class="ui.isMenuOpen ? 'active' : ''" />
     </div>
     <div v-else id="bar">
-        <div class="account"></div>
+        <ThemeToggle />
+        <div id="account"></div>
     </div>        
 </template>
 
 <script setup>
 import { useUIStore } from '@/stores/ui';
-import MobileMenu from './mobile/MobileMenu.vue';
+import MobileMenu from './mobile/AdminMobileMenu.vue';
+import ThemeToggle from '../shared/ThemeToggle.vue';
 
 const ui = useUIStore();
 
@@ -48,5 +50,13 @@ const ui = useUIStore();
         width: 100%;
         background-color: black;
         border-radius: 100px;
+    }
+
+    #account{
+        --height: 100%;
+
+        height: var(--height);
+        aspect-ratio: 1;
+
     }
 </style>

@@ -2,15 +2,32 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 import NotFound from '@/views/NotFound.vue';
 import i18n from '@/i18n';
+import AdminLayout from '@/views/layouts/AdminLayout.vue';
 import DefaultLayout from '@/views/layouts/DefaultLayout.vue';
 
 const routes = [
-  {
+   {
     path: '/',
     component: DefaultLayout,
+    redirect: '/home',
     children: [
       {
-        path: '',
+        path: '/404',
+        name: '404',
+        component: NotFound,
+        meta: {
+          hide: true,
+        }
+      },
+    ],
+  },
+  {
+    path: '/admin',
+    component: AdminLayout,
+    redirect: '/admin/home',
+    children: [
+      {
+        path: 'home',
         name: 'home',
         component: Home,
         meta: {

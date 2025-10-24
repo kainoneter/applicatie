@@ -1,4 +1,36 @@
-:root {
-    --primary: green;
-    --secondary: rgb(89, 100, 136);
+@import './fonts/fonts.css';
+
+
+/* 
+    false: light mode
+    true: dark mode
+*/
+:root[data-theme='false'] {
+    --primary: #C173CE;  
+    --secondary: #9c96b8;
+    --background: #FFFFFF; 
+    --text: #1F1D2A; 
+}
+
+:root[data-theme='true']{
+    --primary: #C173CE;  
+    --secondary: #3A364E;
+    --background: #1F1D2A;
+    --text: #fff;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.5s ease;
+    color: var(--text);
+}
+
+body{
+    --font-size: 18px;
+
+    font-family: 'Figtree', system-ui, sans-serif;
+    font-size: var(--font-size);
+    background-color: var(--background);
 }
