@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AdminHome from '@/views/admin/AdminHome.vue'
 import NotFound from '@/views/shared/NotFound.vue';
-import i18n from '@/i18n';
+import i18n from '@/plugins/i18n';
 import AdminLayout from '@/views/layouts/AdminLayout.vue';
 import DefaultLayout from '@/views/layouts/DefaultLayout.vue';
 import Home from '@/views/Home.vue';
@@ -59,7 +59,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.matched.length === 0) {
-    next('/404');
+    next('/not-found');
   } else {
     if (to.name) {
       document.title = i18n.global.t(`${to.name}.title`);
