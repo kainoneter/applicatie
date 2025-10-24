@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 import './assets/main.css';
 import { createPinia } from 'pinia'
+import { getCookie } from './plugins/axios'
 
 const app = createApp(App)
 const pinia = createPinia();
@@ -17,5 +18,7 @@ app.config.devtools = false;
 app.use(router)
 app.use(i18n)
 app.use(pinia);
+
+// await getCookie();
 
 app.mount('#app')
