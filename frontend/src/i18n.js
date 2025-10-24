@@ -5,7 +5,7 @@ import nl from './locales/nl.json'
 const locale = navigator.language.split('-')[0];
 const messages = {
   en: { hello: 'Hello' },
-  fr: { hello: 'Bonjour' }
+  nl: { hello: 'Bonjour' }
 }
 const i18n = createI18n({
     legacy: false,
