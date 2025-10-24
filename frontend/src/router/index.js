@@ -13,12 +13,12 @@ const routes = [
     redirect: '/home',
     children: [
       {
-        path: '/',
+        path: 'home',
         name: 'home',
         component: Home,
       },
       {
-        path: '/not-found',
+        path: 'not-found',
         name: '404',
         component: NotFound,
         meta: {
@@ -34,18 +34,10 @@ const routes = [
     children: [
       {
         path: 'home',
-        name: 'home',
+        name: 'admin-home',
         component: AdminHome,
         meta: {
           icon: 'mdi-home',
-        }
-      },
-      {
-        path: '/not-found',
-        name: '404',
-        component: NotFound,
-        meta: {
-          hide: true,
         }
       },
     ]

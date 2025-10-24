@@ -1,6 +1,5 @@
 <template>
     <div class="layout">
-        <MainMenu v-if="!ui.isMobile"/>
         <main>
             <TopBar />
             <div class="content">
@@ -11,9 +10,7 @@
 </template>
 
 <script setup>
-import MainMenu from '@/components/admin/AdminMainMenu.vue';
-import TopBar from '@/components/admin/AdminTopBar.vue';
-
+import TopBar from '@/components/frontend/TopBar.vue';
 import { useUIStore } from '@/stores/ui';
 
 const ui = useUIStore();

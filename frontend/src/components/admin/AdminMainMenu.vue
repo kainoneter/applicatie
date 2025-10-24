@@ -11,7 +11,7 @@
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-const routes = router.getRoutes().filter(route => route.name && !route.meta.hide);
+const routes = router.getRoutes().filter(route => route.path.startsWith('/admin') && route.name && !route.meta.hide);
 
 </script>
 
